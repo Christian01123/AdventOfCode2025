@@ -12,18 +12,16 @@ bool checkDirection(char *input)
 {
     if (input[0] == 'R')
     {
-        puts("right");
         removeFirst(input);
         return true;
     }
-    puts("left");
     removeFirst(input);
     return false;
 }
 
 void changeClick(int *curClicks, char *input)
 {
-    int clicks;
+    int clicks = 0;
     //if dir is right
     if (checkDirection(input))
     {
@@ -37,6 +35,9 @@ void changeClick(int *curClicks, char *input)
         *curClicks -= clicks;
         *curClicks = (*curClicks) % MAX_DIAL;
     }
+    printf("curClick: %d\n", *curClicks);
+    printf("clicks: %d\n", clicks);
+
 }
 
 int getClicks(char *input)

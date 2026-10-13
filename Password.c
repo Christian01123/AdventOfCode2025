@@ -4,7 +4,7 @@ int main()
 {
     //initlze values
     int ans = 0;
-    int curClick = 0;
+    int curClicks = 0;
     char curLine[LINE_LEN];
 
     //read/open input file
@@ -16,17 +16,14 @@ int main()
     {
         //update curClick
         puts(curLine);
-        changeClick(&curClick, curLine);
+        changeClick(&curClicks, curLine);
         puts(curLine);
 
-
-
         //check num times curClick == 0, update ans if so
-        if (curClick == MIN_DIAL)
+        if (curClicks == MIN_DIAL)
         {
             ans++;
         }
-        curClick = 0;
     }
     //print answer
         //function: printf
